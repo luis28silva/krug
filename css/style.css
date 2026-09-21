@@ -258,7 +258,7 @@ body {
       rgba(20, 13, 7, 0.75) 65%,
       rgba(20, 13, 7, 0.85) 100%
     ),
-    url(imagens/imagens/hero_krug_biscoitos.png);
+    url(../imagens/imagens/hero_krug_biscoitos.png);
   background-position: center;
   background-size: cover;
   z-index: -1;
