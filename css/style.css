@@ -247,6 +247,7 @@ body {
   z-index: -2;
   background-attachment: fixed;
 }
+
 .hero::before {
   content: "";
   position: absolute;
@@ -266,7 +267,7 @@ body {
 .hero-content {
   padding: 0 32px 90px;
   max-width: 620px;
-  margin-left: clamp(24px, 6vw, 120px);
+  margin-left: max(24px, calc((100vw - var(--container)) / 2 - 80px));
 }
 .hero-badge {
   display: inline-flex;
@@ -449,11 +450,18 @@ section {
 .diferenciais {
   background: var(--white);
 }
+
+.diferenciais .wrap {
+
+  margin-right: auto; 
+} 
+
 .dif-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 56px;
 }
+
 .dif-card svg {
   width: 40px;
   height: 40px;
@@ -486,7 +494,7 @@ section {
   min-width: 0;
   display: flex;
   align-items: center;
-  padding: 60px 40px 60px clamp(24px, 6vw, 96px);
+  padding: 60px 40px 60px max(24px, calc((100vw - var(--container)) / 2 - 80px));
 }
 .momentos-text {
   max-width: 500px;
@@ -760,7 +768,7 @@ section {
   display: grid;
   grid-template-columns: 1.25fr 1fr;
   gap: 50px;
-  padding: 110px 48px;
+  padding: 110px 48px 110px max(24px, calc(16vw - (var(--container) / 2) + 32px));
   align-items: start;
 }
 .sobre .eyebrow {
