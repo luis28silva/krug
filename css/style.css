@@ -422,6 +422,40 @@ body {
   }
 }
 
+/* Seta do botão "Conheça nossos momentos": aponta para a direita (as imagens) */
+.momentos .scroll-hint svg {
+  rotate: -90deg; /* a seta que apontava pra baixo passa a apontar pra direita */
+}
+
+/* No celular a galeria fica acima do texto, então a seta aponta pra cima */
+@media (max-width: 900px) {
+  .momentos .scroll-hint svg {
+    rotate: 180deg;
+  }
+}
+
+/* Ícones do hero com fundo redondo */
+.highlight-item i {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--mustard);
+  background: rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+.highlight-item:hover i {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.22);
+}
+
 /* ---------- Section basics ---------- */
 section {
   padding: 120px 0;
@@ -447,37 +481,222 @@ section {
 }
 
 /* ---------- Diferenciais ---------- */
+
 .diferenciais {
+  /* MESMA margem lateral do hero:
+     margin-left do .hero-content + padding de 32px */
+  --dif-gutter: calc(
+    max(24px, calc((100vw - var(--container)) / 2 - 80px)) + 32px
+  );
+  --dif-photo: url(../imagens/imagens/biscoitos_krug-038.webp); /* TROQUE por outra foto */
+
   background: var(--white);
+  padding: 96px 0 0;
+  overflow: hidden;
 }
 
-.diferenciais .wrap {
-
-  margin-right: auto; 
-} 
-
-.dif-grid {
+.dif-inner {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 56px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 72px;
+  align-items: center;
+  padding-inline: var(--dif-gutter);
 }
 
-.dif-card svg {
-  width: 40px;
-  height: 40px;
+/* ---- Texto ---- */
+.dif-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.dif-head h2 em {
+  font-style: italic;
   color: var(--terracotta);
-  margin-bottom: 22px;
 }
-.dif-card h3 {
+.dif-intro {
+  color: var(--ink-soft);
+  max-width: 460px;
+  margin-bottom: 40px;
+}
+
+.dif-list {
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+}
+.dif-item {
+  display: flex;
+  gap: 26px;
+  padding: 26px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease;
+}
+.dif-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dif-item:hover {
+  transform: translateX(8px);
+}
+.dif-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--mustard);
+  min-width: 56px;
+}
+.dif-item h3 {
   font-size: 1.25rem;
-  margin-bottom: 12px;
   font-weight: 500;
+  margin-bottom: 8px;
 }
-.dif-card p {
+.dif-item p {
   color: var(--ink-soft);
   font-size: 0.98rem;
+  max-width: 440px;
 }
 
+/* ---- Visual (foto + selo + nota) ---- */
+.dif-visual {
+  position: relative;
+  padding-bottom: 28px;
+}
+.dif-photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 220px 220px 24px 24px; /* formato de arco */
+  background-image: var(--dif-photo);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 30px 60px rgba(60, 35, 15, 0.22);
+}
+
+.dif-seal {
+  position: absolute;
+  top: 6%;
+  left: -44px;
+  width: 128px;
+  height: 128px;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 10px 20px rgba(166, 67, 47, 0.35));
+}
+.dif-seal-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: dif-spin 22s linear infinite;
+}
+.dif-seal-ring circle {
+  fill: var(--terracotta);
+}
+.dif-seal-ring text {
+  fill: var(--white);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+}
+.dif-seal i {
+  position: relative;
+  font-size: 30px;
+  color: var(--mustard);
+}
+@keyframes dif-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dif-note {
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  background: var(--mustard);
+  color: #3b2412;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  padding: 16px 22px;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(60, 35, 15, 0.2);
+}
+
+/* ---- Faixa de números ---- */
+.dif-stats {
+  margin-top: 88px;
+  padding: 44px var(--dif-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  background: var(--cream, #f6efe2);
+}
+.dif-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.dif-stat strong {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1;
+  color: var(--terracotta);
+}
+.dif-stat span {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 150px;
+  line-height: 1.3;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 900px) {
+  .diferenciais {
+    padding-top: 64px;
+  }
+  .dif-inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .dif-visual {
+    max-width: 460px;
+    margin-inline: auto;
+    width: 100%;
+  }
+  .dif-seal {
+    left: -12px;
+    width: 104px;
+    height: 104px;
+  }
+  .dif-note {
+    right: -8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .dif-item {
+    gap: 18px;
+  }
+  .dif-num {
+    font-size: 1.8rem;
+    min-width: 44px;
+  }
+  .dif-stats {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dif-seal-ring {
+    animation: none;
+  }
+  .dif-item {
+    transition: none;
+  }
+}
 /* ---------- Momentos ---------- */
 .momentos {
   background: var(--cream);
@@ -543,8 +762,32 @@ section {
 .momentos-gallery .g1 {
   grid-area: a;
 }
+/* Vídeo dentro da galeria: preenche o quadro, sem barra de controles */
+.momentos-gallery .ph-photo video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* enquadramento: veja a dica abaixo */
+  display: block;
+  pointer-events: none; /* impede que os controles apareçam ao passar o mouse */
+}
+.momentos-gallery .ph-photo video::-webkit-media-controls,
+.momentos-gallery .ph-photo video::-webkit-media-controls-panel,
+.momentos-gallery
+  .ph-photo
+  video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+/* Vídeo da galeria: quadro alto, ocupando 2 linhas da grade */
+/* Vídeos com lugar definido na grade */
 .momentos-gallery .g2 {
   grid-area: b;
+}
+.momentos-gallery .g2,
+.momentos-gallery .g10 {
+  background: #2a1a10; /* cor de fundo enquanto o vídeo carrega */
 }
 .momentos-gallery .g3 {
   grid-area: c;
@@ -575,6 +818,62 @@ section {
 }
 .momentos-gallery .g12 {
   grid-area: l;
+}
+
+/* Quadros de frase na galeria (fundo amarelo da marca) */
+.momentos-gallery .frase-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--mustard);
+  background-image: none; /* tira o listrado de placeholder, se existir */
+  color: #3b2412;
+  overflow: hidden;
+}
+.momentos-gallery .frase-card::after {
+  display: none; /* tira a etiqueta "foto" do placeholder */
+}
+.momentos-gallery .frase-card i {
+  font-size: 16px;
+  line-height: 1;
+  color: var(--terracotta);
+}
+.momentos-gallery .frase-card p {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(0.85rem, 1.05vw, 1.05rem);
+  line-height: 1.2;
+  color: #3b2412;
+}
+.momentos-gallery .frase-card span {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--terracotta-deep);
+}
+
+@media (max-width: 700px) {
+  .momentos-gallery .frase-card {
+    padding: 8px 10px;
+    gap: 4px;
+  }
+  .momentos-gallery .frase-card i {
+    font-size: 13px;
+  }
+  .momentos-gallery .frase-card p {
+    font-size: 0.78rem;
+  }
+  .momentos-gallery .frase-card span {
+    font-size: 8.5px;
+  }
 }
 
 .momentos-gallery .ph-photo {
@@ -613,6 +912,16 @@ section {
 .momentos-gallery .ph-photo .overlay span {
   color: var(--white);
   font-size: 12.5px;
+}
+
+/* "Mais que biscoitos" com mais destaque */
+.momentos .eyebrow {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+.momentos .eyebrow .destaque {
+  color: #d98a2b; /* laranja; troque aqui se quiser outro tom */
 }
 
 @media (max-width: 900px) {
@@ -747,133 +1056,321 @@ section {
   }
 }
 
+/* Imagem abaixo da citação */
+.citacao-img {
+  display: block;
+  width: 100%;
+  max-width: 320px; /* tamanho máximo no desktop; ajuste à vontade */
+  height: auto;
+  margin: 36px auto 0; /* espaço em cima e centralizada */
+  border-radius: 16px; /* apague se a imagem for PNG sem fundo (recorte) */
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 700px) {
+  .citacao-img {
+    max-width: 280px;
+    margin-top: 26px;
+  }
+}
+
 /* ---------- Sobre ---------- */
 .sobre {
   background: var(--ink);
   color: var(--cream);
   padding: 0;
   display: grid;
-  grid-template-columns: minmax(280px, 34%) 1fr;
+  /* foto | história (a maior) | painel terracota */
+  grid-template-columns: minmax(240px, 26%) minmax(0, 1.7fr) minmax(
+      320px,
+      0.95fr
+    );
   align-items: stretch;
 }
+
+/* ---- Foto ---- */
 .sobre-photo {
   border-radius: 0;
   height: 100%;
-  min-height: 620px;
+  min-height: 680px;
   width: 100%;
   object-fit: cover;
   display: block;
 }
-.sobre-content {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 50px;
-  padding: 110px 48px 110px max(24px, calc(16vw - (var(--container) / 2) + 32px));
-  align-items: start;
+
+/* ---- História (meio) ---- */
+.sobre-text {
+  padding: 100px 56px;
+  align-self: center;
 }
 .sobre .eyebrow {
   color: var(--mustard);
 }
+.sobre h2 {
+  color: var(--white);
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+  line-height: 1.12;
+  margin-bottom: 8px;
+}
+.sobre h2 em {
+  font-style: italic;
+  color: var(--mustard);
+}
 .sobre blockquote {
   font-family: var(--serif);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-style: italic;
+  line-height: 1.5;
   color: var(--white);
   border-left: 2px solid var(--mustard);
   padding-left: 20px;
-  margin: 22px 0 30px;
+  margin: 26px 0 22px;
 }
+.sobre-body {
+  color: #e5d8c2;
+  font-size: 1rem;
+  max-width: 560px;
+}
+/* Assinatura com foto redonda */
+.sobre-assinatura {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+.assinatura-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.sobre-assinatura strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white);
+}
+.sobre-assinatura span {
+  font-size: 13.5px;
+  font-style: italic;
+  color: var(--mustard);
+}
+/* Pilares com ícones */
+.sobre-pilares {
+  list-style: none;
+  margin: 36px 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.sobre-pilares li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pilar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(227, 169, 58, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mustard);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.sobre-pilares strong {
+  font-size: 15px;
+  color: var(--white);
+}
+.sobre-pilares li > span:last-child {
+  font-size: 13.5px;
+  color: #d9cbb6;
+  line-height: 1.4;
+}
+
+/* Números */
 .sobre-stats {
   display: flex;
-  gap: 34px;
+  gap: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 .sobre-stats div strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--mustard);
 }
 .sobre-stats div span {
   font-size: 12.5px;
   color: #d9cbb6;
 }
-.fundadora {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 30px;
-}
-.fundadora-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-.fundadora .ph-photo::after {
-  display: none;
-}
-.fundadora strong {
-  display: block;
-  font-size: 15px;
-}
-.fundadora span {
-  font-size: 13px;
-  color: #c9bba5;
-}
 
+/* ---- Painel terracota (direita) ---- */
 .onde-encontrar {
-  background: rgba(227, 169, 58, 0.1);
-  border: 1px solid rgba(227, 169, 58, 0.35);
-  border-radius: 16px;
-  padding: 30px 26px;
+  background: var(--terracotta);
+  color: var(--white);
+  padding: 100px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.onde-eyebrow {
+  font-size: 14px;
+  color: var(--mustard);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.onde-eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--mustard);
 }
 .onde-encontrar h3 {
   color: var(--white);
-  font-size: 1.1rem;
-  margin-bottom: 18px;
+  font-size: 1.6rem;
   font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 12px;
 }
-.onde-encontrar ul {
-  list-style: none;
-  display: grid;
-  gap: 18px;
-}
-.onde-encontrar li {
-  display: flex;
-  gap: 12px;
-  font-size: 14px;
-  color: #e5d8c2;
-}
-.onde-encontrar li svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  color: var(--mustard);
-  margin-top: 2px;
+.onde-intro {
+  color: #f6e4dc;
+  font-size: 0.98rem;
+  margin-bottom: 26px;
 }
 
-@media (max-width: 900px) {
+.onde-tipos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.onde-tipo {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+.onde-tipo:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.18);
+}
+.onde-tipo i {
+  font-size: 26px;
+  color: var(--mustard);
+}
+.onde-tipo span {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.onde-regioes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 28px;
+}
+.onde-regioes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 13.5px;
+}
+.onde-regioes i {
+  color: var(--mustard);
+}
+
+.onde-cta {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.onde-cta p {
+  font-size: 0.95rem;
+  color: #f6e4dc;
+  margin-bottom: 16px;
+}
+.onde-btn {
+  background: var(--white);
+  color: var(--terracotta-deep);
+}
+.onde-btn i {
+  font-size: 18px;
+}
+.onde-btn:hover {
+  background: var(--cream);
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 1100px) {
   .sobre {
     grid-template-columns: 1fr;
   }
   .sobre-photo {
     min-height: 340px;
+    max-height: 420px;
   }
-  .sobre-content {
+  .sobre-text {
+    padding: 64px 24px;
+  }
+  .onde-encontrar {
+    padding: 64px 24px;
+  }
+}
+
+@media (max-width: 700px) {
+  .onde-cta {
+    text-align: center;
+  }
+  .onde-btn {
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .sobre-pilares {
     grid-template-columns: 1fr;
-    padding: 60px 24px;
+  }
+  .sobre-stats {
+    gap: 26px;
   }
 }
 
 /* ---------- Contato ---------- */
+
 .contato {
+  /* MESMA margem lateral do hero e da seção diferenciais */
+  --dif-gutter: calc(
+    max(24px, calc((100vw - var(--container)) / 2 - 80px)) + 32px
+  );
+
   background: var(--cream-dark);
 }
 .contato .wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 70px;
+  max-width: none;
+  margin: 0;
+  padding-inline: var(--dif-gutter);
 }
 .contato-info .canal {
   display: flex;
@@ -889,16 +1386,23 @@ section {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--terracotta);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--terracotta);
   flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
-.canal-icon svg {
-  width: 20px;
-  height: 20px;
+.canal-icon i {
+  font-size: 19px;
+  line-height: 1;
+}
+.canal:hover .canal-icon {
+  background: var(--terracotta-deep);
+  transform: translateY(-2px);
 }
 .canal strong {
   display: block;
@@ -938,6 +1442,22 @@ section {
   outline: none;
   border-color: var(--terracotta);
   box-shadow: 0 0 0 3px rgba(166, 67, 47, 0.15);
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 900px) {
+  .contato .wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Contato: mesma margem lateral do rodapé no celular */
+@media (max-width: 900px) {
+  .contato .wrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 /* ---------- Footer ---------- */
@@ -1003,36 +1523,67 @@ footer {
   }
 }
 
+/* Rodapé: margem lateral no celular */
+@media (max-width: 900px) {
+  footer .footer-top,
+  footer .footer-bottom {
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+}
+
 /* ---------- Sabores page ---------- */
 .sabores-hero {
+  /* MESMA margem lateral do hero */
+  --dif-gutter: calc(
+    max(24px, calc((100vw - var(--container)) / 2 - 80px)) + 32px
+  );
+
   position: relative;
   min-height: 46vh;
   display: flex;
   align-items: center;
+  padding: 0;
   color: var(--white);
+  background-image: url(../imagens/sabores/banner-sabores.png);
+  background-position: center;
+  background-size: cover;
 }
-.sabores-hero .ph-photo {
-  position: absolute;
-  inset: 0;
-  background-attachment: fixed;
-}
+
+/* Degradê da esquerda pra direita: escuro atrás do texto,
+   transparente onde fica a caixinha e a xícara */
 .sabores-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(20, 13, 7, 0.55);
+  background: linear-gradient(
+    90deg,
+    rgba(20, 13, 7, 0.9) 0%,
+    rgba(20, 13, 7, 0.65) 40%,
+    rgba(20, 13, 7, 0.08) 75%,
+    rgba(20, 13, 7, 0) 100%
+  );
 }
-.sabores-hero .wrap {
+
+.sabores-hero-content {
   position: relative;
+  width: 100%;
+  padding: 70px var(--dif-gutter);
 }
 .sabores-hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  margin-bottom: 18px;
   color: var(--white);
 }
+.sabores-hero h1 em {
+  font-style: italic;
+  color: var(--mustard);
+}
 .sabores-hero p {
-  margin-top: 14px;
+  font-size: 1.05rem;
+  max-width: 440px;
   color: #f1e9da;
-  max-width: 480px;
 }
 
 .sabores-list {
@@ -1082,6 +1633,24 @@ footer {
   order: -1;
 }
 
+/* Destaque dos sabores */
+.sabor-row {
+  --sabor-orange: #d98a2b; /* troque aqui se quiser outro tom de laranja */
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--sabor-orange) 55%, transparent);
+}
+
+.sabor-row .sabor-num {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--sabor-orange);
+  margin-bottom: 8px;
+}
+
+.sabor-row h3 {
+  color: var(--terracotta);
+}
+
 @media (max-width: 900px) {
   .main-nav {
     display: none;
@@ -1112,5 +1681,25 @@ footer {
   }
   section {
     padding: 80px 0;
+  }
+}
+
+@media (max-width: 700px) {
+  /* no celular o texto fica por cima da foto, então escurece por igual */
+  .sabores-hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(20, 13, 7, 0.55) 0%,
+      rgba(20, 13, 7, 0.85) 100%
+    );
+  }
+  .sabores-hero-content {
+    padding-block: 50px;
+  }
+  .sabores-hero h1 {
+    font-size: clamp(2.3rem, 9vw, 2.8rem);
+  }
+  .sabores-hero p {
+    font-size: 0.95rem;
   }
 }
