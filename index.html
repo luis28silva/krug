@@ -154,19 +154,55 @@
 </section>
 
 <!-- PARALLAX QUOTE -->
-<section class="quote-parallax">
-  <blockquote class="reveal">
-    "Não existe problema que um biscoito quentinho não possa amenizar."
-    <cite>— frasesdobem.com</cite>
-    <img src="imagens/imagens/arabesco.png" alt="Descreva a imagem aqui" class="citacao-img reveal" loading="lazy">
-  </blockquote>
+<section class="quote-parallax" aria-label="Conheça nossas linhas de biscoitos">
+  <div class="linhas-botoes reveal">
+
+    <a href="sabores.html#doces" class="linha-btn linha-doces">
+      <span class="linha-icone"><i class="fa-solid fa-cookie-bite"></i></span>
+      <span class="linha-texto">
+        <small>Conheça a linha de</small>
+        <strong>Doces</strong>
+      </span>
+      <i class="fa-solid fa-arrow-right linha-seta"></i>
+    </a>
+
+    <a href="sabores.html#palitos" class="linha-btn linha-palitos">
+      <span class="linha-icone"><i class="fa-solid fa-wheat-awn"></i></span>
+      <span class="linha-texto">
+        <small>Conheça a linha de</small>
+        <strong>Palitos salgados</strong>
+      </span>
+      <i class="fa-solid fa-arrow-right linha-seta"></i>
+    </a>
+
+  </div>
 </section>
 
 <!-- SOBRE -->
 <section class="sobre" id="sobre">
+
   <img src="imagens/imagens/sobre-krug.png" alt="Vivian na cozinha preparando os biscoitos" class="sobre-photo reveal">
 
-  <div class="sobre-text reveal">
+  <!-- COLUNA DO MEIO: FUNDADORA -->
+  <div class="sobre-fundadora reveal">
+    <p class="eyebrow">Nossa história</p>
+    <h2>Uma mulher, um recomeço e <em>muitas caixinhas de história.</em></h2>
+
+    <div class="sobre-fundadora-texto">
+      <p>À frente da Krug está Vivian Krummenauer, uma empreendedora que encontrou na mudança a oportunidade de construir uma nova história. Durante a pandemia, ela deixou o trabalho na área da estética e entrou no ramo alimentício. Em 2021, nasceu a Krug Biscoitos, em Igrejinha, no Rio Grande do Sul.</p>
+      <p>Começar uma indústria trouxe desafios e aprendizados. Vivian precisou conhecer um novo mercado e aprender a conduzir o negócio, mesmo ouvindo que a ideia não daria certo. Com fé, coragem e persistência, foi construindo o caminho da marca.</p>
+      <p>Hoje, a Krug leva seus biscoitos doces e salgados a diferentes redes de supermercados, mantendo suas raízes em Igrejinha. Por trás de cada caixinha está essa trajetória: uma mulher que acreditou na própria ideia e segue trabalhando para que a Krug faça parte dos bons momentos de cada vez mais pessoas.</p>
+    </div>
+
+    <div class="sobre-assinatura">
+      <strong>Vivian Krummenauer</strong>
+      <span>Fundadora da Krug Biscoitos</span>
+      <p class="sobre-assinatura-frase">Cada caixinha carrega um pouco dessa história.</p>
+    </div>
+  </div>
+
+  <!-- COLUNA DA DIREITA: OKTOBERFEST -->
+  <div class="sobre-oktober reveal">
     <p class="eyebrow">Produzido</p>
     <h2>Na terra da <em>Oktoberfest</em></h2>
 
@@ -206,63 +242,59 @@
     </div>
   </div>
 
-  <!-- FUNDADORA -->
-<section class="fundadora" id="fundadora">
-  <div class="fundadora-inner">
-
-
-    <div class="fundadora-conteudo reveal">
-      <p class="eyebrow">Nossa história</p>
-      <h2>Uma mulher, um recomeço e <em>muitas caixinhas de história.</em></h2>
-
-      <div class="fundadora-texto">
-        <p>À frente da Krug está Vivian Krummenauer, uma empreendedora que encontrou na mudança a oportunidade de construir uma nova história. Durante a pandemia, ela deixou o trabalho na área da estética e entrou no ramo alimentício. Em 2021, nasceu a Krug Biscoitos, em Igrejinha, no Rio Grande do Sul.</p>
-        <p>Começar uma indústria trouxe desafios e aprendizados. Vivian precisou conhecer um novo mercado e aprender a conduzir o negócio, mesmo ouvindo que a ideia não daria certo. Com fé, coragem e persistência, foi construindo o caminho da marca.</p>
-        <p>Hoje, a Krug leva seus biscoitos doces e salgados a diferentes redes de supermercados, mantendo suas raízes em Igrejinha. Por trás de cada caixinha está essa trajetória: uma mulher que acreditou na própria ideia e segue trabalhando para que a Krug faça parte dos bons momentos de cada vez mais pessoas.</p>
-      </div>
-
-      <div class="fundadora-assinatura">
-        <div class="fundadora-nome">
-          <strong>Vivian Krummenauer</strong>
-          <span>Fundadora da Krug Biscoitos</span>
-        </div>
-        <blockquote>Cada caixinha carrega um pouco dessa história.</blockquote>
-      </div>
-    </div>
-
-  </div>
-</section>
-
- 
 </section>
 
 <!-- ONDE ENCONTRAR -->
-<section class="onde-encontrar" id="onde-encontrar">
+<section class="onde" id="onde-encontrar">
   <div class="onde-inner">
 
-    <div class="onde-info reveal">
-      <p class="onde-eyebrow">Onde encontrar</p>
-      <h2>Os biscoitos Krug estão na sua região</h2>
-      <p class="onde-intro">Você encontra a Krug em pontos de venda do Vale do Sinos e do Vale do Caí.</p>
+    <!-- Painel esquerdo -->
+    <div class="onde-intro reveal">
+      <p class="eyebrow">Pertinho de você</p>
+      <h2>Onde <em>encontrar</em></h2>
+      <p class="onde-lead">
+        Escolha sua cidade e descubra onde comprar os Biscoitos Krug.
+      </p>
 
-      <div class="onde-regioes">
-        <span><i class="fa-solid fa-location-dot"></i> Vale do Sinos</span>
-        <span><i class="fa-solid fa-location-dot"></i> Vale do Caí</span>
-      </div>
+      <label class="onde-select" for="ondeCidade">
+        <span class="onde-select-icon"><i class="fa-solid fa-location-dot"></i></span>
+        <span class="onde-select-text">
+          <small>Selecione sua cidade</small>
+          <select id="ondeCidade" aria-controls="ondeLista"></select>
+        </span>
+        <i class="fa-solid fa-chevron-down onde-select-chevron"></i>
+      </label>
 
-      <div class="onde-cta">
-        <p>Não achou perto de você? Chama a gente e a gente diz onde encontrar.</p>
-        <a class="btn onde-btn" href="https://wa.me/5551000000000?text=Ol%C3%A1!%20Gostaria%20de%20saber%20onde%20encontrar%20os%20biscoitos%20Krug." target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> Pedir pelo WhatsApp
-        </a>
-      </div>
+      <a class="btn onde-whats" id="ondeWhats" href="#" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+        Quero encontrar meus biscoitos
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <img src="imagens/sabores/amendoim.webp" alt="Biscoitos Krug" class="onde-foto" loading="lazy">
     </div>
 
-    <div class="onde-tipos reveal">
-      <div class="onde-tipo"><i class="fa-solid fa-basket-shopping"></i><span>Supermercados</span></div>
-      <div class="onde-tipo"><i class="fa-solid fa-bread-slice"></i><span>Padarias</span></div>
-      <div class="onde-tipo"><i class="fa-solid fa-apple-whole"></i><span>Fruteiras</span></div>
-      <div class="onde-tipo"><i class="fa-solid fa-store"></i><span>Empórios e mercearias</span></div>
+    <!-- Painel direito -->
+    <div class="onde-painel reveal">
+      <div class="onde-painel-topo">
+        <div class="onde-painel-titulo">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <span>Pontos de venda em</span>
+            <h3 id="ondeCidadeTitulo">Igrejinha</h3>
+          </div>
+        </div>
+        <span class="onde-contador"><i class="fa-solid fa-store"></i><span id="ondeContadorTexto" aria-live="polite"></span></span>
+      </div>
+
+      <div class="onde-filtros" id="ondeFiltros" role="group" aria-label="Filtrar por tipo de local">
+        <button type="button" class="is-active" data-tipo="todos">Todos</button>
+        <button type="button" data-tipo="padaria">Padarias</button>
+        <button type="button" data-tipo="mercado">Mercados</button>
+        <button type="button" data-tipo="fruteira">Fruteiras</button>
+      </div>
+
+      <div class="onde-lista" id="ondeLista"></div>
     </div>
 
   </div>

@@ -393,8 +393,6 @@ body {
   border: 1.5px solid currentColor;
 }
 
-
-
 .scroll-hint {
   display: inline-flex;
   align-items: center;
@@ -481,7 +479,6 @@ section {
   margin-top: 18px;
   font-size: 1.05rem;
 }
-
 
 /* ---------- Momentos ---------- */
 .momentos {
@@ -798,14 +795,14 @@ section {
   cursor: pointer;
 }
 
-/* ---------- Parallax quote ---------- */
+/* ---------- Parallax com botões das linhas ---------- */
 .quote-parallax {
   position: relative;
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  padding: 80px 24px;
   color: var(--white);
   background-attachment: fixed;
   background-position: center;
@@ -816,58 +813,103 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(20, 13, 7, 0.55);
+  background: rgba(20, 13, 7, 0.35);
 }
-.quote-parallax blockquote {
-  position: relative;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.5rem, 3.2vw, 2.4rem);
-  max-width: 780px;
-  padding: 0 32px;
+
+.linhas-botoes {
+  position: relative; /* fica acima do escurecimento */
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.quote-parallax cite {
-  position: relative;
+
+.linha-btn {
+  display: grid;
+  grid-template-columns: 42px auto auto;
+  align-items: center;
+  column-gap: 12px;
+  min-width: 236px;
+  padding: 13px 20px 13px 15px;
+  border-radius: 16px;
+  color: var(--white);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+.linha-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.45);
+  filter: brightness(1.06);
+}
+.linha-doces {
+  background: var(--mustard);
+  color: var(--ink);
+}
+.linha-palitos {
+  background: var(--terracotta);
+}
+
+.linha-icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.22);
+}
+.linha-doces .linha-icone {
+  background: rgba(59, 42, 30, 0.14);
+}
+
+.linha-texto small {
   display: block;
-  margin-top: 20px;
-  font-family: var(--sans);
-  font-style: normal;
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  color: var(--mustard);
+  font-size: 11.5px;
+  opacity: 0.85;
 }
+.linha-texto strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.linha-seta {
+  font-size: 14px;
+  transition: transform 0.25s ease;
+}
+.linha-btn:hover .linha-seta {
+  transform: translateX(4px);
+}
+
 @media (max-width: 768px) {
   .quote-parallax {
     background-attachment: scroll;
+    min-height: auto;
+    padding: 64px 24px;
+  }
+  .linhas-botoes {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+  .linha-btn {
+    min-width: 0;
   }
 }
-
-/* Imagem abaixo da citação */
-.citacao-img {
-  display: block;
-  width: 100%;
-  max-width: 320px; /* tamanho máximo no desktop; ajuste à vontade */
-  height: auto;
-  margin: 36px auto 0; /* espaço em cima e centralizada */
-  border-radius: 16px; /* apague se a imagem for PNG sem fundo (recorte) */
-  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
-}
-
-@media (max-width: 700px) {
-  .citacao-img {
-    max-width: 280px;
-    margin-top: 26px;
-  }
-}
-
 /* ---------- Sobre ---------- */
 .sobre {
   background: var(--ink);
   color: var(--cream);
   padding: 0;
   display: grid;
-  /* foto | texto */
-  grid-template-columns: minmax(280px, 42%) minmax(0, 1fr);
+  /* foto | fundadora | oktoberfest */
+  grid-template-columns: 28% minmax(0, 1fr) minmax(0, 1fr);
   align-items: stretch;
 }
 
@@ -878,61 +920,115 @@ section {
   min-height: 680px;
   width: 100%;
   object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
-/* ---- História (meio) ---- */
-.sobre-text {
-  padding: 100px 56px;
+/* ---- Colunas de texto ---- */
+.sobre-fundadora,
+.sobre-oktober {
+  padding: 100px 44px;
   align-self: center;
 }
+.sobre-oktober {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .sobre .eyebrow {
   color: var(--mustard);
 }
 .sobre h2 {
   color: var(--white);
-  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
-  line-height: 1.12;
+  font-size: clamp(1.6rem, 2.3vw, 2.2rem);
+  line-height: 1.15;
   margin-bottom: 8px;
 }
 .sobre h2 em {
   font-style: italic;
   color: var(--mustard);
 }
-.sobre blockquote {
+
+/* ---- Fundadora ---- */
+.sobre-fundadora-texto {
+  margin-top: 22px;
+}
+.sobre-fundadora-texto p {
+  color: #e5d8c2;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.sobre-fundadora-texto p + p {
+  margin-top: 14px;
+}
+.sobre-assinatura {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.sobre-assinatura strong {
+  display: block;
   font-family: var(--serif);
   font-size: 1.25rem;
+  color: var(--white);
+}
+.sobre-assinatura span {
+  display: block;
+  font-size: 13px;
+  color: var(--mustard);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.sobre-assinatura-frase {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #d9cbb6;
+}
+
+/* ---- Oktoberfest ---- */
+.sobre-oktober blockquote {
+  font-family: var(--serif);
+  font-size: 1.2rem;
   font-style: italic;
   line-height: 1.5;
   color: var(--white);
   border-left: 2px solid var(--mustard);
   padding-left: 20px;
-  margin: 26px 0 22px;
+  margin: 24px 0 20px;
 }
 .sobre-body {
   color: #e5d8c2;
   font-size: 1rem;
-  max-width: 560px;
+  line-height: 1.7;
 }
-
 .sobre-body + .sobre-body {
   margin-top: 14px;
 }
-/* Pilares com ícones */
+
+/* Pilares empilhados: ícone ao lado do texto */
 .sobre-pilares {
   list-style: none;
-  margin: 36px 0;
+  margin: 32px 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
 .sobre-pilares li {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 16px;
+  row-gap: 2px;
+  align-items: center;
 }
 .pilar-icon {
+  grid-row: 1 / span 2;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -942,29 +1038,30 @@ section {
   justify-content: center;
   color: var(--mustard);
   font-size: 18px;
-  margin-bottom: 6px;
 }
 .sobre-pilares strong {
   font-size: 15px;
   color: var(--white);
+  align-self: end;
 }
 .sobre-pilares li > span:last-child {
   font-size: 13.5px;
   color: #d9cbb6;
   line-height: 1.4;
+  align-self: start;
 }
 
 /* Números */
 .sobre-stats {
   display: flex;
-  gap: 40px;
-  padding-top: 28px;
+  gap: 36px;
+  padding-top: 26px;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 .sobre-stats div strong {
   display: block;
   font-family: var(--serif);
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   color: var(--mustard);
 }
 .sobre-stats div span {
@@ -972,27 +1069,419 @@ section {
   color: #d9cbb6;
 }
 
-/* ---- Responsivo ---- */
-@media (max-width: 1100px) {
-  .sobre {
-    grid-template-columns: 1fr;
-  }
-  .sobre-photo {
-    min-height: 340px;
-    max-height: 420px;
-  }
-  .sobre-text {
-    padding: 64px 24px;
+/* ---------- Sobre: coluna Oktoberfest em mostarda ---------- */
+.sobre .sobre-oktober {
+  background: var(--mustard);
+  border-left: 0;
+  color: var(--ink);
+}
+
+.sobre .sobre-oktober .eyebrow {
+  color: var(--terracotta, #8a3b1e);
+}
+.sobre .sobre-oktober h2 {
+  color: var(--ink);
+}
+.sobre .sobre-oktober h2 em {
+  color: var(--terracotta, #8a3b1e);
+}
+
+.sobre .sobre-oktober blockquote {
+  color: var(--ink);
+  border-left-color: var(--ink);
+}
+.sobre .sobre-oktober .sobre-body {
+  color: var(--ink);
+}
+
+/* Pilares */
+.sobre .sobre-oktober .pilar-icon {
+  border-color: rgba(43, 24, 12, 0.45);
+  color: var(--ink);
+}
+.sobre .sobre-oktober .sobre-pilares strong {
+  color: var(--ink);
+}
+.sobre .sobre-oktober .sobre-pilares li > span:last-child {
+  color: rgba(43, 24, 12, 0.8);
+}
+
+/* Números */
+.sobre .sobre-oktober .sobre-stats {
+  border-top-color: rgba(43, 24, 12, 0.25);
+}
+.sobre .sobre-oktober .sobre-stats div strong {
+  color: var(--terracotta, #8a3b1e);
+}
+.sobre .sobre-oktober .sobre-stats div span {
+  color: rgba(43, 24, 12, 0.8);
+}
+
+/* No celular, a borda de cima vira só uma divisão discreta */
+@media (max-width: 800px) {
+  .sobre .sobre-oktober {
+    border-top: 0;
   }
 }
 
+/* ---- Responsivo ---- */
+@media (max-width: 1200px) {
+  .sobre {
+    grid-template-columns: 1fr 1fr;
+  }
+  .sobre-photo {
+    grid-column: 1 / -1;
+    min-height: 340px;
+    max-height: 420px;
+  }
+  .sobre-fundadora,
+  .sobre-oktober {
+    padding: 64px 32px;
+    align-self: stretch;
+  }
+}
 
-@media (max-width: 600px) {
-  .sobre-pilares {
+@media (max-width: 800px) {
+  .sobre {
     grid-template-columns: 1fr;
+  }
+  .sobre-fundadora,
+  .sobre-oktober {
+    padding: 56px 24px;
+  }
+  .sobre-oktober {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .sobre-stats {
     gap: 26px;
+  }
+}
+
+/* ---------- Onde encontrar ---------- */
+.onde {
+  background: var(--cream);
+  padding: 90px 0;
+}
+.onde-inner {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.5fr);
+  gap: 48px;
+  align-items: stretch;
+}
+
+/* ---- Esquerda ---- */
+.onde-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.onde .eyebrow {
+  color: var(--terracotta);
+}
+.onde h2 {
+  color: var(--ink);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+.onde h2 em {
+  font-style: italic;
+  color: var(--mustard);
+}
+.onde-lead {
+  color: var(--ink);
+  opacity: 0.85;
+  max-width: 340px;
+  margin-bottom: 26px;
+}
+
+/* Select */
+.onde-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border: 1px solid rgba(59, 42, 30, 0.14);
+  border-radius: 14px;
+  padding: 12px 18px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  max-width: 380px;
+}
+.onde-select:focus-within {
+  border-color: var(--mustard);
+  box-shadow: 0 0 0 3px rgba(227, 169, 58, 0.25);
+}
+.onde-select-icon {
+  color: var(--terracotta);
+  font-size: 20px;
+}
+.onde-select-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.onde-select-text small {
+  font-size: 11.5px;
+  color: rgba(59, 42, 30, 0.6);
+}
+.onde-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+}
+.onde-select-chevron {
+  color: var(--ink);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* Botão WhatsApp */
+.onde-whats {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--mustard);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 16px 24px;
+  font-weight: 600;
+  max-width: 380px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+.onde-whats:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+.onde-whats .fa-whatsapp {
+  font-size: 1.3rem;
+}
+
+.onde-foto {
+  width: min(280px, 70%);
+  margin-top: 28px;
+  align-self: flex-start;
+  display: block;
+}
+
+/* ---- Direita: painel ---- */
+.onde-painel {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-radius: 24px;
+  padding: 32px;
+}
+.onde-painel-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.onde-painel-titulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.onde-painel-titulo > i {
+  color: var(--mustard);
+  font-size: 26px;
+}
+.onde-painel-titulo span {
+  display: block;
+  font-size: 14px;
+  opacity: 0.85;
+}
+.onde-painel-titulo h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  color: var(--mustard);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* Contador com ícone */
+.onde-contador {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.onde-contador i {
+  color: var(--mustard);
+}
+
+/* Filtros */
+.onde-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.onde-filtros button {
+  font: inherit;
+  font-size: 14px;
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.onde-filtros button:hover {
+  border-color: var(--mustard);
+}
+.onde-filtros button.is-active {
+  background: var(--mustard);
+  border-color: var(--mustard);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Lista com altura fixa: 3 linhas x 2 colunas = 6 cards */
+.onde-lista {
+  --card-h: 76px;
+  --gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: var(--card-h);
+  align-content: start;
+  gap: var(--gap);
+  height: calc(var(--card-h) * 3 + var(--gap) * 2);
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+/* Cards compactos */
+.onde-card {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  column-gap: 12px;
+  align-items: center;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 0 14px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.onde-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+.onde-card-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 18px;
+}
+.onde-card[data-tipo="padaria"] .onde-card-icone {
+  background: #c0392b;
+}
+.onde-card[data-tipo="mercado"] .onde-card-icone {
+  background: var(--mustard);
+  color: var(--ink);
+}
+.onde-card[data-tipo="fruteira"] .onde-card-icone {
+  background: #6b7a3a;
+}
+
+.onde-card-info {
+  min-width: 0;
+}
+.onde-card-info strong {
+  display: block;
+  font-size: 14.5px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.onde-card-info small {
+  display: block;
+  font-size: 12px;
+  color: rgba(59, 42, 30, 0.65);
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.onde-card-seta {
+  color: var(--mustard);
+  font-size: 13px;
+}
+
+/* Mensagem quando o filtro não tem resultado */
+.onde-vazio {
+  grid-column: 1 / -1;
+  grid-row: 1 / span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 1000px) {
+  .onde-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .onde-foto {
+    display: none; /* tire esta linha se quiser a foto no tablet/celular */
+  }
+}
+
+@media (max-width: 600px) {
+  .onde {
+    padding: 60px 0;
+  }
+  .onde-painel {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+  /* só no celular: 1 coluna x 6 cards */
+  .onde-lista {
+    grid-template-columns: 1fr;
+    height: calc(var(--card-h) * 6 + var(--gap) * 5);
   }
 }
 
