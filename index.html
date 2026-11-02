@@ -29,7 +29,7 @@
       </ul>
     </nav>
       <div class="social-links">
-        <a href="SEU_LINK_WHATSAPP" aria-label="WhatsApp" target="_blank">
+        <a href="HTTPS://WA.ME/5551980302546" aria-label="WhatsApp" target="_blank">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
         <a href="SEU_LINK_INSTAGRAM" aria-label="Instagram" target="_blank">
@@ -80,8 +80,8 @@
   
     <div class="momentos-gallery reveal" id="momentos-galeria">
       <div class="ph-photo g1">
-        <img src="imagens/imagens/galeria-1.png" alt="Vídeo: a receita">
-        <div class="overlay"><span>Vídeo: a receita</span></div>
+        <img src="imagens/imagens/biscoito-2.jpeg" alt="Vídeo: a receita">
+        <div class="overlay"><span>Um toque especial</span></div>
       </div>
 
       <div class="ph-photo g2">
@@ -126,7 +126,7 @@
       </div>
 
       <div class="ph-photo g9">
-        <img src="imagens/imagens/galeria-12.webp" alt="Vídeo: a receita">
+        <img src="imagens/imagens/biscoito-14.PNG" alt="Vídeo: a receita">
         <div class="overlay"><span>Vídeo: a receita</span></div>
       </div>
 
@@ -256,14 +256,18 @@
         Escolha sua cidade e descubra onde comprar os Biscoitos Krug.
       </p>
 
-      <label class="onde-select" for="ondeCidade">
-        <span class="onde-select-icon"><i class="fa-solid fa-location-dot"></i></span>
-        <span class="onde-select-text">
-          <small>Selecione sua cidade</small>
-          <select id="ondeCidade" aria-controls="ondeLista"></select>
-        </span>
-        <i class="fa-solid fa-chevron-down onde-select-chevron"></i>
-      </label>
+      <div class="onde-select" id="ondeSelect">
+        <button type="button" class="onde-select-btn" id="ondeSelectBtn"
+                aria-haspopup="listbox" aria-expanded="false" aria-controls="ondeCidadeLista">
+          <span class="onde-select-icon"><i class="fa-solid fa-location-dot"></i></span>
+          <span class="onde-select-text">
+            <small>Selecione sua cidade</small>
+            <strong id="ondeCidadeAtual">Igrejinha</strong>
+          </span>
+          <i class="fa-solid fa-chevron-down onde-select-chevron"></i>
+        </button>
+        <ul class="onde-select-lista" id="ondeCidadeLista" role="listbox" tabindex="-1"></ul>
+      </div>
 
       <a class="btn onde-whats" id="ondeWhats" href="#" target="_blank" rel="noopener">
         <i class="fa-brands fa-whatsapp"></i>
@@ -320,21 +324,40 @@
     </div>
     </div>
     <form class="contato-form" onsubmit="return false;">
-      <div class="form-group"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Seu nome"></div>
-      <div class="form-group"><label for="email">E-mail</label><input id="email" type="email" placeholder="seu@email.com"></div>
-      <div class="form-group"><label for="msg">Mensagem</label><textarea id="msg" placeholder="Como podemos ajudar?"></textarea></div>
-      <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+      <div class="form-group">
+        <input id="nome" type="text" placeholder=" ">
+        <label for="nome">Nome</label>
+      </div>
+      <div class="form-group">
+        <input id="email" type="email" placeholder=" ">
+        <label for="email">E-mail</label>
+      </div>
+      <div class="form-group">
+        <textarea id="msg" placeholder=" "></textarea>
+        <label for="msg">Mensagem</label>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Enviar mensagem <i class="fa-solid fa-paper-plane"></i>
+      </button>
     </form>
   </div>
 </section>
-
 <footer>
+  <!-- Faixa de chamada -->
+
   <div class="wrap footer-top">
     <div class="footer-brand">
       <img src="imagens/logos/krug.png" alt="Krug Biscoitos">
       <p>Biscoitos caseiros com sabores que atravessam gerações, desde 2022 em Igrejinha, RS.</p>
+      <div class="footer-social">
+        <!-- use os mesmos links do cabeçalho -->
+        <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
     </div>
-    <div class="footer-col">
+
+    <div class="footer-col footer-nav">
       <h4>Navegação</h4>
       <ul>
         <li><a href="index.html">Início</a></li>
@@ -343,18 +366,23 @@
         <li><a href="index.html#onde-encontrar">Onde encontrar</a></li>
       </ul>
     </div>
+
     <div class="footer-col">
       <h4>Contato</h4>
       <ul>
-        <li><a href="#">WhatsApp: (51) 00000-0000</a></li>
-        <li><a href="#">contato@krugbiscoitos.com.br</a></li>
-        <li><a href="#">@krugbiscoitos</a></li>
+        <li><a href="https://wa.me/5551980302546?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20biscoitos%20Krug." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>(51) 98030-2546</a></li>
+        <li><a href="mailto:contato@krugbiscoitos.com.br"><i class="fa-solid fa-envelope"></i>contato@krugbiscoitos.com.br</a></li>
+        <li><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i>@krugbiscoitos</a></li>
       </ul>
     </div>
   </div>
-  <div class="wrap footer-bottom">
-    <span>&copy; 2026 Krug Biscoitos. Todos os direitos reservados.</span>
-    <span>Site feito por <a href="https://lrwebdesign.com.br" target="_blank">LR Web Design</a></span>
+
+  <!-- Última linha com fundo próprio -->
+  <div class="footer-bar">
+    <div class="wrap footer-bottom">
+      <span>&copy; 2026 Krug Biscoitos. Todos os direitos reservados.</span>
+      <span>Site feito por <a href="https://lrwebdesign.com.br" target="_blank" rel="noopener">LR Web Design</a></span>
+    </div>
   </div>
 </footer>
 

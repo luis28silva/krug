@@ -32,7 +32,7 @@ if (revealEls.length) {
 }
 
 // Lightbox: clicar numa foto da galeria amplia ela numa janela central
-const galleryItems = document.querySelectorAll('.momentos-gallery > .ph-photo');
+const galleryItems = document.querySelectorAll('.momentos-gallery > .ph-photo:not(.frase-card):has(img)');
 if (galleryItems.length) {
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
@@ -68,12 +68,15 @@ if (galleryItems.length) {
     }
     caption.textContent = captionText;
     lightbox.classList.add('is-open');
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = sbw > 0 ? sbw + 'px' : '';
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     lightbox.classList.remove('is-open');
     document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
   };
 
   galleryItems.forEach((item) => {
@@ -98,7 +101,7 @@ if (contactForm) {
 
 /* ---------- Onde encontrar ---------- */
 (function () {
-  const WHATS_NUMERO = "5551999999999"; // troque pelo número da Krug (55 + DDD + número)
+  const WHATS_NUMERO = "https://wa.me/5551980302546"; // troque pelo número da Krug (55 + DDD + número)
 
   const TIPOS = {
     padaria:  { rotulo: "Padaria",  icone: "fa-bread-slice" },
@@ -150,22 +153,39 @@ if (contactForm) {
     ]
   };
 
-  const selectEl   = document.getElementById("ondeCidade");
-  const tituloEl   = document.getElementById("ondeCidadeTitulo");
-  const contadorEl = document.getElementById("ondeContadorTexto");
-  const listaEl    = document.getElementById("ondeLista");
-  const filtrosEl  = document.getElementById("ondeFiltros");
-  const whatsEl    = document.getElementById("ondeWhats");
-  if (!selectEl || !listaEl) return;
+    const selectBox   = document.getElementById("ondeSelect");
+  const selectBtn   = document.getElementById("ondeSelectBtn");
+  const selectLabel = document.getElementById("ondeCidadeAtual");
+  const selectList  = document.getElementById("ondeCidadeLista");
+  const tituloEl    = document.getElementById("ondeCidadeTitulo");
+  const contadorEl  = document.getElementById("ondeContadorTexto");
+  const listaEl     = document.getElementById("ondeLista");
+  const filtrosEl   = document.getElementById("ondeFiltros");
+  const whatsEl     = document.getElementById("ondeWhats");
+  if (!selectBox || !listaEl) return;
 
+  const cidades = Object.keys(PONTOS);
+  let cidadeAtual = cidades[0];
   let tipoAtivo = "todos";
 
-  Object.keys(PONTOS).forEach(function (cidade) {
-    const opt = document.createElement("option");
-    opt.value = cidade;
-    opt.textContent = cidade;
-    selectEl.appendChild(opt);
+  // monta a lista de cidades
+  cidades.forEach(function (cidade) {
+    const li = document.createElement("li");
+    li.setAttribute("role", "option");
+    li.dataset.cidade = cidade;
+    li.innerHTML = "<span></span><i class='fa-solid fa-check'></i>";
+    li.firstChild.textContent = cidade;
+    selectList.appendChild(li);
   });
+
+  function abrir() {
+    selectBox.classList.add("is-open");
+    selectBtn.setAttribute("aria-expanded", "true");
+  }
+  function fechar() {
+    selectBox.classList.remove("is-open");
+    selectBtn.setAttribute("aria-expanded", "false");
+  }
 
   function linkDoLocal(p, cidade) {
     if (p.link) return p.link;
@@ -191,10 +211,15 @@ if (contactForm) {
   }
 
   function render() {
-    const cidade = selectEl.value;
+    const cidade = cidadeAtual;
     const todos = PONTOS[cidade] || [];
     const visiveis = todos.filter(function (p) {
       return tipoAtivo === "todos" || p.tipo === tipoAtivo;
+    });
+
+    selectLabel.textContent = cidade;
+    selectList.querySelectorAll("li").forEach(function (li) {
+      li.setAttribute("aria-selected", li.dataset.cidade === cidade ? "true" : "false");
     });
 
     tituloEl.textContent = cidade;
@@ -216,7 +241,39 @@ if (contactForm) {
     whatsEl.href = "https://wa.me/" + WHATS_NUMERO + "?text=" + encodeURIComponent(msg);
   }
 
-  selectEl.addEventListener("change", render);
+  // abre/fecha clicando em qualquer parte da caixa (texto ou setinha)
+  selectBtn.addEventListener("click", function () {
+    selectBox.classList.contains("is-open") ? fechar() : abrir();
+  });
+
+  // escolhe a cidade
+  selectList.addEventListener("click", function (e) {
+    const li = e.target.closest("li[data-cidade]");
+    if (!li) return;
+    cidadeAtual = li.dataset.cidade;
+    render();
+    fechar();
+    selectBtn.focus();
+  });
+
+  // fecha ao clicar fora ou apertar Esc
+  document.addEventListener("click", function (e) {
+    if (!selectBox.contains(e.target)) fechar();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") fechar();
+  });
+
+  // setas ↑ ↓ do teclado trocam de cidade
+  selectBox.addEventListener("keydown", function (e) {
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    e.preventDefault();
+    let i = cidades.indexOf(cidadeAtual) + (e.key === "ArrowDown" ? 1 : -1);
+    i = Math.max(0, Math.min(cidades.length - 1, i));
+    cidadeAtual = cidades[i];
+    render();
+    abrir();
+  });
 
   filtrosEl.addEventListener("click", function (e) {
     const btn = e.target.closest("button[data-tipo]");
@@ -229,4 +286,43 @@ if (contactForm) {
   });
 
   render();
+})();
+
+// Cabeçalho: sombra mais forte ao rolar + link da seção atual
+(function () {
+  const header = document.querySelector('.site-header');
+  const links = document.querySelectorAll('.main-nav a, .mobile-nav a');
+  if (!header || !links.length) return;
+
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const sections = ['sobre', 'onde-encontrar', 'contato']
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  function update() {
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+
+    // seção mais abaixo que já passou de 40% da altura da tela
+    let atual = null;
+    sections.forEach((s) => {
+      if (s.getBoundingClientRect().top <= window.innerHeight * 0.4) atual = s;
+    });
+
+    links.forEach((a) => {
+      const href = a.getAttribute('href') || '';
+      const ativo = atual
+        ? href.endsWith('#' + atual.id)
+        : href === page || (page === '' && href === 'index.html');
+      a.classList.toggle('is-active', ativo);
+    });
+  }
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { update(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
