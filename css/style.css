@@ -739,6 +739,17 @@ section {
       "l l";
   }
 }
+
+/* Título da seção "momentos" */
+.momentos-text h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+.momentos-text h2 .destaque {
+  font-style: italic;
+  color: #d98a2b; /* mesmo laranja de antes */
+}
 /* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;
