@@ -12,7 +12,6 @@
 <meta name="description" content="Biscoitos artesanais Krug, desde 2022 levando sabor e tradição para dentro das casas e corações.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -25,7 +24,7 @@
         <li><a href="sabores.html">Sabores</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#onde-encontrar">Onde encontrar</a></li>
+        <li><a href="#seu-momento">Momentos</a></li>
       </ul>
     </nav>
       <div class="social-links">
@@ -45,12 +44,11 @@
       <li><a href="sabores.html">Sabores</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="#onde-encontrar">Onde encontrar</a></li>
+      <li><a href="#seu-momento">Momentos</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- HERO -->
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
@@ -61,7 +59,7 @@
   </div>
 </section>
 
-<!-- MOMENTOS -->
+<!-- GALERIA: EXISTE UM BISCOITO PERFEITO -->
 <section class="momentos" id="momentos">
   <div class="momentos-text-wrap">
     <div class="momentos-text reveal">
@@ -146,7 +144,6 @@
       </div>
 
     </div>
-  </div>
 </section>
 
 <!-- PARALLAX QUOTE -->
@@ -240,61 +237,49 @@
 
 </section>
 
-<!-- ONDE ENCONTRAR -->
-<section class="onde" id="onde-encontrar">
-  <div class="onde-inner">
+<!-- QUAL BISCOITO COMBINA COM O SEU MOMENTO -->
+<section class="combina" id="seu-momento">
+  <div class="combina__wrap">
 
-    <!-- Painel esquerdo -->
-    <div class="onde-intro reveal">
-      <p class="eyebrow">Pertinho de você</p>
-      <h2>Onde <em>encontrar</em></h2>
-      <p class="onde-lead">
-        Escolha sua cidade e descubra onde comprar os Biscoitos Krug.
-      </p>
+    <div class="combina__left">
+      <p class="combina__eyebrow">Descubra o seu</p>
+      <h2 class="combina__title">Qual biscoito combina com o seu <em>momento?</em></h2>
+      <p class="combina__text">Escolha um momento e descubra a caixinha perfeita pra ele.</p>
 
-      <div class="onde-select" id="ondeSelect">
-        <button type="button" class="onde-select-btn" id="ondeSelectBtn"
-                aria-haspopup="listbox" aria-expanded="false" aria-controls="ondeCidadeLista">
-          <span class="onde-select-icon"><i class="fa-solid fa-location-dot"></i></span>
-          <span class="onde-select-text">
-            <small>Selecione sua cidade</small>
-            <strong id="ondeCidadeAtual">Igrejinha</strong>
-          </span>
-          <i class="fa-solid fa-chevron-down onde-select-chevron"></i>
+      <div class="combina__buttons">
+        <button type="button" class="momento-btn" data-momento="cafe" aria-pressed="false">
+          <i class="fa-solid fa-mug-hot"></i><span>Café da manhã</span>
         </button>
-        <ul class="onde-select-lista" id="ondeCidadeLista" role="listbox" tabindex="-1"></ul>
+        <button type="button" class="momento-btn" data-momento="tarde" aria-pressed="false">
+          <i class="fa-solid fa-mug-saucer"></i><span>Tardinha com café</span>
+        </button>
+        <button type="button" class="momento-btn is-active" data-momento="happy" aria-pressed="true">
+          <i class="fa-solid fa-martini-glass-citrus"></i><span>Happy hour</span>
+        </button>
+        <button type="button" class="momento-btn" data-momento="presente" aria-pressed="false">
+          <i class="fa-solid fa-gift"></i><span>Presente</span>
+        </button>
+        <button type="button" class="momento-btn" data-momento="criancas" aria-pressed="false">
+          <i class="fa-solid fa-face-smile"></i><span>Lanche das crianças</span>
+        </button>
+        <button type="button" class="momento-btn" data-momento="estrada" aria-pressed="false">
+          <i class="fa-solid fa-car-side"></i><span>Na estrada</span>
+        </button>
       </div>
 
-      <a class="btn onde-whats" id="ondeWhats" href="#" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i>
-        Quero encontrar meus biscoitos
-        <i class="fa-solid fa-arrow-right"></i>
+      <a class="combina__cta" id="momentosCta" href="https://wa.me/5551980302546" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Pedir meu favorito <i class="fa-solid fa-arrow-right"></i>
       </a>
 
-      <img src="imagens/sabores/amendoim.webp" alt="Biscoitos Krug" class="onde-foto" loading="lazy">
+      <button type="button" class="combina__surprise" id="momentosSurpresa">
+        <i class="fa-solid fa-dice"></i><span>Me surpreenda</span>
+      </button>
     </div>
 
-    <!-- Painel direito -->
-    <div class="onde-painel reveal">
-      <div class="onde-painel-topo">
-        <div class="onde-painel-titulo">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>
-            <span>Pontos de venda em</span>
-            <h3 id="ondeCidadeTitulo">Igrejinha</h3>
-          </div>
-        </div>
-        <span class="onde-contador"><i class="fa-solid fa-store"></i><span id="ondeContadorTexto" aria-live="polite"></span></span>
-      </div>
-
-      <div class="onde-filtros" id="ondeFiltros" role="group" aria-label="Filtrar por tipo de local">
-        <button type="button" class="is-active" data-tipo="todos">Todos</button>
-        <button type="button" data-tipo="padaria">Padarias</button>
-        <button type="button" data-tipo="mercado">Mercados</button>
-        <button type="button" data-tipo="fruteira">Fruteiras</button>
-      </div>
-
-      <div class="onde-lista" id="ondeLista"></div>
+    <div class="combina__panel" aria-live="polite">
+      <p class="combina__for">Para o seu</p>
+      <h3 class="combina__name" id="momentoNome">Happy hour</h3>
+      <div class="combina__stage" id="momentoStage"></div>
     </div>
 
   </div>
@@ -359,7 +344,7 @@
         <li><a href="index.html">Início</a></li>
         <li><a href="sabores.html">Sabores</a></li>
         <li><a href="index.html#sobre">Sobre</a></li>
-        <li><a href="index.html#onde-encontrar">Onde encontrar</a></li>
+        <li><a href="index.html#seu-momento">Momentos</a></li>
       </ul>
     </div>
 
