@@ -1,372 +1,590 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Krug Biscoitos | Biscoitos caseiros feitos com carinho</title>
-<link rel="icon" href="imagens/favicon/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon_io/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="imagens/favicon_io/apple-touch-icon.png">
-<meta name="theme-color" content="#3b2a1e">
-<meta name="description" content="Biscoitos artesanais Krug, desde 2022 levando sabor e tradição para dentro das casas e corações.">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krug Biscoitos | Biscoitos caseiros feitos com carinho</title>
+    <link rel="icon" href="imagens/favicon/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="imagens/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="imagens/favicon_io/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="imagens/favicon_io/apple-touch-icon.png"
+    />
+    <meta name="theme-color" content="#3b2a1e" />
+    <meta
+      name="description"
+      content="Biscoitos artesanais Krug, desde 2022 levando sabor e tradição para dentro das casas e corações."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a href="/" class="brand"
+          ><img src="imagens/logos/logo-krug.png" alt="Krug Biscoitos"
+        /></a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="sabores.html">Sabores</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#seu-momento">Momentos</a></li>
+          </ul>
+        </nav>
+        <div class="social-links">
+          <a
+            href="https://wa.me/5551980302546"
+            aria-label="WhatsApp"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/krugbiscoitos/"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="SEU_LINK_FACEBOOK" aria-label="Facebook" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="sabores.html">Sabores</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#seu-momento">Momentos</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<header class="site-header">
-  <div class="wrap">
-    <a href="index.html" class="brand"><img src="assets/logo-krug.png" alt="Krug Biscoitos"></a>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sabores.html">Sabores</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="#seu-momento">Momentos</a></li>
-      </ul>
-    </nav>
-      <div class="social-links">
-        <a href="https://wa.me/5551980302546" aria-label="WhatsApp" target="_blank" rel="noopener"> <i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/krugbiscoitos/" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
-        <a href="SEU_LINK_FACEBOOK" aria-label="Facebook" target="_blank">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-    </div>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <nav class="mobile-nav">
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="sabores.html">Sabores</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
-      <li><a href="#seu-momento">Momentos</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Desde 2022, em Igrejinha · RS</span>
+        <h1>O biscoito<br />da <em>caixinha!</em></h1>
+        <p>
+          De origem gaúcha, feito com ingredientes de qualidade e o cuidado de
+          quem acredita que cada mordida merece ser especial.
+        </p>
+        <a href="sabores.html" class="btn btn-primary btn-hero"
+          >Escolha seu novo sabor favorito aqui!</a
+        >
+      </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <span class="hero-badge">Desde 2022, em Igrejinha · RS</span>
-    <h1>O biscoito<br>da <em>caixinha!</em></h1>
-    <p>De origem gaúcha, feito com ingredientes de qualidade e o cuidado de quem acredita que cada mordida merece ser especial.</p>
-    <a href="sabores.html" class="btn btn-primary btn-hero">Escolha seu novo sabor favorito aqui!</a>
-  </div>
-</section>
-
-<!-- GALERIA: EXISTE UM BISCOITO PERFEITO -->
-<section class="momentos" id="momentos">
-  <div class="momentos-text-wrap">
-    <div class="momentos-text reveal">
-  <h2>Existe um <span class="destaque">biscoito perfeito</span> para cada momento!</h2>
-  <p>Cada receita nasce do cuidado com os detalhes, do tempo respeitado e do carinho em cada etapa. Na Krug, o sabor não vem sozinho — ele chega acompanhado de memória, afeto e da alegria de presentear alguém especial.</p>
-  <a href="#momentos-galeria" class="scroll-hint">
-    Encontre o seu momento
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4v15"/><path d="m6 13 6 6 6-6"/></svg>
-  </a>
-</div>
-  </div>
-  
-    <div class="momentos-gallery reveal" id="momentos-galeria">
-      <div class="ph-photo g1">
-        <img src="imagens/imagens/biscoito-2.jpeg" alt="Biscoitos Krug em um momento especial">
-        <div class="overlay"><span>Um toque especial</span></div>
+    <!-- GALERIA: EXISTE UM BISCOITO PERFEITO -->
+    <section class="momentos" id="momentos">
+      <div class="momentos-text-wrap">
+        <div class="momentos-text reveal">
+          <h2>
+            Existe um <span class="destaque">biscoito perfeito</span> para cada
+            momento!
+          </h2>
+          <p>
+            Cada receita nasce do cuidado com os detalhes, do tempo respeitado e
+            do carinho em cada etapa. Na Krug, o sabor não vem sozinho — ele
+            chega acompanhado de memória, afeto e da alegria de presentear
+            alguém especial.
+          </p>
+          <a href="#momentos-galeria" class="scroll-hint">
+            Encontre o seu momento
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M12 4v15" />
+              <path d="m6 13 6 6 6-6" />
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <div class="ph-photo g2">
-            <video
+      <div class="momentos-gallery reveal" id="momentos-galeria">
+        <div class="ph-photo g1">
+          <img
+            src="imagens/imagens/biscoito-2.webp"
+            alt="Biscoitos Krug em um momento especial"
+          />
+          <div class="overlay"><span>Um toque especial</span></div>
+        </div>
+
+        <div class="ph-photo g2">
+          <video
             src="imagens/videos/video3.mp4"
-            autoplay muted loop playsinline
+            autoplay
+            muted
+            loop
+            playsinline
             disablepictureinpicture
-            controlslist="nodownload noremoteplayback">
-            </video>
-      </div>
+            controlslist="nodownload noremoteplayback"
+          ></video>
+        </div>
 
-      <div class="ph-photo g3">
-        <img src="imagens/imagens/galeria-3.jpeg" alt="Biscoitos Krug para o café da manhã">
-        <div class="overlay"><span>Café da manhã</span></div>
-      </div>
+        <div class="ph-photo g3">
+          <img
+            src="imagens/imagens/galeria-3.webp"
+            alt="Biscoitos Krug para o café da manhã"
+          />
+          <div class="overlay"><span>Café da manhã</span></div>
+        </div>
 
-      <div class="ph-photo g4">
-        <img src="imagens/imagens/galeria-5.webp" alt="Biscoitos Krug na tardinha com café">
-        <div class="overlay"><span>Tardinha com café</span></div>
-      </div>
+        <div class="ph-photo g4">
+          <img
+            src="imagens/imagens/galeria-5.webp"
+            alt="Biscoitos Krug na tardinha com café"
+          />
+          <div class="overlay"><span>Tardinha com café</span></div>
+        </div>
 
-      <div class="ph-photo g5 frase-card">
-      <i class="fa-solid fa-cookie-bite"></i>
-      <p>Um biscoito, um café e o tempo que a gente merece.</p>
-      <span>Krug Biscoitos</span>
-     </div>
+        <div class="ph-photo g5 frase-card">
+          <i class="fa-solid fa-cookie-bite"></i>
+          <p>Um biscoito, um café e o tempo que a gente merece.</p>
+          <span>Krug Biscoitos</span>
+        </div>
 
-      <div class="ph-photo g6">
-        <img src="imagens/imagens/galeria-6.jpeg" alt="Palitos salgados Krug para a happy hour">
-        <div class="overlay"><span>Happy hour</span></div>
-      </div>
+        <div class="ph-photo g6">
+          <img
+            src="imagens/imagens/galeria-6.webp"
+            alt="Palitos salgados Krug para a happy hour"
+          />
+          <div class="overlay"><span>Happy hour</span></div>
+        </div>
 
-      <div class="ph-photo g7 frase-card">
-      <i class="fa-solid fa-heart"></i>
-      <p>Feito para dividir. Difícil é não repetir.</p>
-      <span>Krug Biscoitos</span>
-      </div>
+        <div class="ph-photo g7 frase-card">
+          <i class="fa-solid fa-heart"></i>
+          <p>Feito para dividir. Difícil é não repetir.</p>
+          <span>Krug Biscoitos</span>
+        </div>
 
-      <div class="ph-photo g8">
-        <img src="imagens/imagens/biscoito-4.jpeg" alt="Biscoitos Krug para presentear">
-        <div class="overlay"><span>Pra presentear</span></div>
-      </div>
+        <div class="ph-photo g8">
+          <img
+            src="imagens/imagens/biscoito-4.webp"
+            alt="Biscoitos Krug para presentear"
+          />
+          <div class="overlay"><span>Pra presentear</span></div>
+        </div>
 
-     <div class="ph-photo g9">
-      <img src="imagens/imagens/biscoito-14.PNG" alt="Biscoitos Krug para o lanche das crianças">
-      <div class="overlay"><span>Lanche das crianças</span></div>
-    </div>
+        <div class="ph-photo g9">
+          <img
+            src="imagens/imagens/biscoito-14.webp"
+            alt="Biscoitos Krug para o lanche das crianças"
+          />
+          <div class="overlay"><span>Lanche das crianças</span></div>
+        </div>
 
-      <div class="ph-photo g10">
-            <video
+        <div class="ph-photo g10">
+          <video
             src="imagens/videos/video4.mp4"
-            autoplay muted loop playsinline
+            autoplay
+            muted
+            loop
+            playsinline
             disablepictureinpicture
-            controlslist="nodownload noremoteplayback">
-            </video>
+            controlslist="nodownload noremoteplayback"
+          ></video>
+        </div>
+
+        <div class="ph-photo g11">
+          <img
+            src="imagens/imagens/galeria-11.webp"
+            alt="Biscoitos Krug para uma pausa especial"
+          />
+          <div class="overlay"><span>Uma pausa merecida</span></div>
+        </div>
+
+        <div class="ph-photo g12">
+          <img
+            src="imagens/imagens/biscoito-10.webp"
+            alt="Biscoitos Krug para dividir com quem você gosta"
+          />
+          <div class="overlay"><span>Pra dividir</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARALLAX QUOTE -->
+    <section
+      class="quote-parallax"
+      aria-label="Conheça nossas linhas de biscoitos"
+    >
+      <div class="linhas-botoes reveal">
+        <a href="sabores.html#doces" class="linha-btn linha-doces">
+          <span class="linha-icone"
+            ><i class="fa-solid fa-cookie-bite"></i
+          ></span>
+          <span class="linha-texto">
+            <small>Conheça a linha de</small>
+            <strong>Doces</strong>
+          </span>
+          <i class="fa-solid fa-arrow-right linha-seta"></i>
+        </a>
+
+        <a href="sabores.html#palitos" class="linha-btn linha-palitos">
+          <span class="linha-icone"><i class="fa-solid fa-wheat-awn"></i></span>
+          <span class="linha-texto">
+            <small>Conheça a linha de</small>
+            <strong>Palitos salgados</strong>
+          </span>
+          <i class="fa-solid fa-arrow-right linha-seta"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+      <img
+        src="imagens/imagens/vivian-1.webp"
+        alt="Vivian na cozinha preparando os biscoitos"
+        class="sobre-photo reveal"
+      />
+
+      <!-- COLUNA DO MEIO: FUNDADORA -->
+      <div class="sobre-fundadora reveal">
+        <p class="eyebrow">Nossa história</p>
+        <h2>
+          Uma mulher, um recomeço e <em>muitas caixinhas de história.</em>
+        </h2>
+
+        <div class="sobre-fundadora-texto">
+          <p>
+            À frente da Krug está Vivian Krummenauer, uma empreendedora que
+            encontrou na mudança a oportunidade de construir uma nova história.
+            Durante a pandemia, ela deixou o trabalho na área da estética e
+            entrou no ramo alimentício. Em 2021, nasceu a Krug Biscoitos, em
+            Igrejinha, no Rio Grande do Sul.
+          </p>
+          <p>
+            Começar uma indústria trouxe desafios e aprendizados. Vivian
+            precisou conhecer um novo mercado e aprender a conduzir o negócio,
+            mesmo ouvindo que a ideia não daria certo. Com fé, coragem e
+            persistência, foi construindo o caminho da marca.
+          </p>
+          <p>
+            Hoje, a Krug leva seus biscoitos doces e salgados a diferentes redes
+            de supermercados, mantendo suas raízes em Igrejinha. Por trás de
+            cada caixinha está essa trajetória: uma mulher que acreditou na
+            própria ideia e segue trabalhando para que a Krug faça parte dos
+            bons momentos de cada vez mais pessoas.
+          </p>
+        </div>
+
+        <div class="sobre-assinatura">
+          <strong>Vivian Krummenauer</strong>
+          <span>Fundadora da Krug Biscoitos</span>
+          <p class="sobre-assinatura-frase">
+            Cada caixinha carrega um pouco dessa história.
+          </p>
+        </div>
       </div>
 
-      <div class="ph-photo g11">
-        <img src="imagens/imagens/galeria-11.webp" alt="Biscoitos Krug para uma pausa especial">
-        <div class="overlay"><span>Uma pausa merecida</span></div>
+      <!-- COLUNA DA DIREITA: OKTOBERFEST -->
+      <div class="sobre-oktober reveal">
+        <p class="eyebrow">Produzido</p>
+        <h2>Na terra da <em>Oktoberfest</em></h2>
+
+        <blockquote>
+          Da terra da Oktoberfest para os teus bons momentos.
+        </blockquote>
+
+        <p class="sobre-body">
+          A Krug é produzida em Igrejinha, no Rio Grande do Sul, onde a cultura
+          alemã faz parte da nossa história e a Oktoberfest celebra o encontro,
+          a gastronomia e as tradições da região.
+        </p>
+        <p class="sobre-body">
+          É nesse lugar que fazemos nossos biscoitos, com ingredientes de
+          qualidade e cuidado em cada receita. Carregamos um pouco dessa cultura
+          em cada caixinha: o prazer de receber, compartilhar algo gostoso e
+          transformar uma pausa em um bom momento.
+        </p>
+
+        <ul class="sobre-pilares">
+          <li>
+            <span class="pilar-icon"><i class="fa-solid fa-heart"></i></span>
+            <strong>Sabores que atravessam gerações</strong>
+            <span>Receitas que já faziam parte da nossa mesa.</span>
+          </li>
+          <li>
+            <span class="pilar-icon"
+              ><i class="fa-solid fa-hand-holding-heart"></i
+            ></span>
+            <strong>Qualidade em cada processo</strong>
+            <span>Cada fornada preparada com calma e cuidado.</span>
+          </li>
+          <li>
+            <span class="pilar-icon"
+              ><i class="fa-solid fa-wheat-awn"></i
+            ></span>
+            <strong>Ingredientes selecionados</strong>
+            <span>Qualidade que dá para sentir na primeira mordida.</span>
+          </li>
+        </ul>
+
+        <div class="sobre-stats">
+          <div><strong>10+</strong><span>sabores</span></div>
+          <div><strong>100%</strong><span>artesanal</span></div>
+          <div><strong>2022</strong><span>fundação</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUAL BISCOITO COMBINA COM O SEU MOMENTO -->
+    <section class="combina" id="seu-momento">
+      <div class="combina__wrap">
+        <div class="combina__left">
+          <p class="combina__eyebrow">Descubra o seu</p>
+          <h2 class="combina__title">
+            Qual biscoito combina com o seu <em>momento?</em>
+          </h2>
+          <p class="combina__text">
+            Escolha um momento e descubra a caixinha perfeita pra ele.
+          </p>
+
+          <div class="combina__buttons">
+            <button
+              type="button"
+              class="momento-btn"
+              data-momento="cafe"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-mug-hot"></i><span>Café da manhã</span>
+            </button>
+            <button
+              type="button"
+              class="momento-btn"
+              data-momento="tarde"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-mug-saucer"></i
+              ><span>Tardinha com café</span>
+            </button>
+            <button
+              type="button"
+              class="momento-btn is-active"
+              data-momento="happy"
+              aria-pressed="true"
+            >
+              <i class="fa-solid fa-martini-glass-citrus"></i
+              ><span>Happy hour</span>
+            </button>
+            <button
+              type="button"
+              class="momento-btn"
+              data-momento="presente"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-gift"></i><span>Presente</span>
+            </button>
+            <button
+              type="button"
+              class="momento-btn"
+              data-momento="criancas"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-face-smile"></i
+              ><span>Lanche das crianças</span>
+            </button>
+            <button
+              type="button"
+              class="momento-btn"
+              data-momento="estrada"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-car-side"></i><span>Na estrada</span>
+            </button>
+          </div>
+
+          <a
+            class="combina__cta"
+            id="momentosCta"
+            href="https://wa.me/5551980302546"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Pedir meu favorito
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <button type="button" class="combina__surprise" id="momentosSurpresa">
+            <i class="fa-solid fa-dice"></i><span>Me surpreenda</span>
+          </button>
+        </div>
+
+        <div class="combina__panel" aria-live="polite">
+          <p class="combina__for">Para o seu</p>
+          <h3 class="combina__name" id="momentoNome">Happy hour</h3>
+          <div class="combina__stage" id="momentoStage"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contato" id="contato">
+      <div class="wrap">
+        <div class="contato-info reveal">
+          <p class="eyebrow">Fale com a gente</p>
+          <h2 style="margin-bottom: 30px">Vamos conversar sobre biscoitos</h2>
+          <a
+            class="canal"
+            href="https://wa.me/5551980302546?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20biscoitos%20Krug."
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="canal-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div><strong>WhatsApp</strong><span>(51) 98030-2546</span></div>
+          </a>
+          <a class="canal" href="mailto:contato@krugbiscoitos.com.br">
+            <div class="canal-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong>E-mail</strong><span>contato@krugbiscoitos.com.br</span>
+            </div>
+          </a>
+          <a
+            class="canal"
+            href="https://www.instagram.com/krugbiscoitos/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="canal-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div><strong>Instagram</strong><span>@krugbiscoitos</span></div>
+          </a>
+        </div>
+        <form class="contato-form" onsubmit="return false;">
+          <div class="form-group">
+            <input id="nome" type="text" placeholder=" " />
+            <label for="nome">Nome</label>
+          </div>
+          <div class="form-group">
+            <input id="email" type="email" placeholder=" " />
+            <label for="email">E-mail</label>
+          </div>
+          <div class="form-group">
+            <textarea id="msg" placeholder=" "></textarea>
+            <label for="msg">Mensagem</label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Enviar mensagem <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <!-- Faixa de chamada -->
+
+      <div class="wrap footer-top">
+        <div class="footer-brand">
+          <img src="imagens/logos/krug.png" alt="Krug Biscoitos" />
+          <p>
+            Biscoitos caseiros com sabores que atravessam gerações, desde 2022
+            em Igrejinha, RS.
+          </p>
+          <div class="footer-social">
+            <!-- use os mesmos links do cabeçalho -->
+            <a
+              href="https://wa.me/5551980302546"
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/krugbiscoitos/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-nav">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="sabores.html">Sabores</a></li>
+            <li><a href="/#sobre">Sobre</a></li>
+            <li><a href="/#seu-momento">Momentos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a
+                href="https://wa.me/5551980302546?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20biscoitos%20Krug."
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-whatsapp"></i>(51) 98030-2546</a
+              >
+            </li>
+            <li>
+              <a href="mailto:contato@krugbiscoitos.com.br"
+                ><i class="fa-solid fa-envelope"></i
+                >contato@krugbiscoitos.com.br</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/krugbiscoitos/"
+                target="_blank"
+                rel="noopener"
+                ><i class="fa-brands fa-instagram"></i>@krugbiscoitos</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="ph-photo g12">
-        <img src="imagens/imagens/biscoito-10.jpeg" alt="Biscoitos Krug para dividir com quem você gosta">
-        <div class="overlay"><span>Pra dividir</span></div>
+      <!-- Última linha com fundo próprio -->
+      <div class="footer-bar">
+        <div class="wrap footer-bottom">
+          <span>&copy; 2026 Krug Biscoitos. Todos os direitos reservados.</span>
+          <span
+            >Site feito por
+            <a href="https://lrwebdesign.com.br" target="_blank" rel="noopener"
+              >LR Web Design</a
+            ></span
+          >
+        </div>
       </div>
+    </footer>
 
-    </div>
-</section>
-
-<!-- PARALLAX QUOTE -->
-<section class="quote-parallax" aria-label="Conheça nossas linhas de biscoitos">
-  <div class="linhas-botoes reveal">
-
-    <a href="sabores.html#doces" class="linha-btn linha-doces">
-      <span class="linha-icone"><i class="fa-solid fa-cookie-bite"></i></span>
-      <span class="linha-texto">
-        <small>Conheça a linha de</small>
-        <strong>Doces</strong>
-      </span>
-      <i class="fa-solid fa-arrow-right linha-seta"></i>
-    </a>
-
-    <a href="sabores.html#palitos" class="linha-btn linha-palitos">
-      <span class="linha-icone"><i class="fa-solid fa-wheat-awn"></i></span>
-      <span class="linha-texto">
-        <small>Conheça a linha de</small>
-        <strong>Palitos salgados</strong>
-      </span>
-      <i class="fa-solid fa-arrow-right linha-seta"></i>
-    </a>
-
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-
-  <img src="imagens/imagens/vivian-1.webp" alt="Vivian na cozinha preparando os biscoitos" class="sobre-photo reveal">
-
-  <!-- COLUNA DO MEIO: FUNDADORA -->
-  <div class="sobre-fundadora reveal">
-    <p class="eyebrow">Nossa história</p>
-    <h2>Uma mulher, um recomeço e <em>muitas caixinhas de história.</em></h2>
-
-    <div class="sobre-fundadora-texto">
-      <p>À frente da Krug está Vivian Krummenauer, uma empreendedora que encontrou na mudança a oportunidade de construir uma nova história. Durante a pandemia, ela deixou o trabalho na área da estética e entrou no ramo alimentício. Em 2021, nasceu a Krug Biscoitos, em Igrejinha, no Rio Grande do Sul.</p>
-      <p>Começar uma indústria trouxe desafios e aprendizados. Vivian precisou conhecer um novo mercado e aprender a conduzir o negócio, mesmo ouvindo que a ideia não daria certo. Com fé, coragem e persistência, foi construindo o caminho da marca.</p>
-      <p>Hoje, a Krug leva seus biscoitos doces e salgados a diferentes redes de supermercados, mantendo suas raízes em Igrejinha. Por trás de cada caixinha está essa trajetória: uma mulher que acreditou na própria ideia e segue trabalhando para que a Krug faça parte dos bons momentos de cada vez mais pessoas.</p>
-    </div>
-
-    <div class="sobre-assinatura">
-      <strong>Vivian Krummenauer</strong>
-      <span>Fundadora da Krug Biscoitos</span>
-      <p class="sobre-assinatura-frase">Cada caixinha carrega um pouco dessa história.</p>
-    </div>
-  </div>
-
-  <!-- COLUNA DA DIREITA: OKTOBERFEST -->
-  <div class="sobre-oktober reveal">
-    <p class="eyebrow">Produzido</p>
-    <h2>Na terra da <em>Oktoberfest</em></h2>
-
-    <blockquote>
-      Da terra da Oktoberfest para os teus bons momentos.
-    </blockquote>
-
-    <p class="sobre-body">
-      A Krug é produzida em Igrejinha, no Rio Grande do Sul, onde a cultura alemã faz parte da nossa história e a Oktoberfest celebra o encontro, a gastronomia e as tradições da região.
-    </p>
-    <p class="sobre-body">
-      É nesse lugar que fazemos nossos biscoitos, com ingredientes de qualidade e cuidado em cada receita. Carregamos um pouco dessa cultura em cada caixinha: o prazer de receber, compartilhar algo gostoso e transformar uma pausa em um bom momento.
-    </p>
-
-    <ul class="sobre-pilares">
-      <li>
-        <span class="pilar-icon"><i class="fa-solid fa-heart"></i></span>
-        <strong>Sabores que atravessam gerações</strong>
-        <span>Receitas que já faziam parte da nossa mesa.</span>
-      </li>
-      <li>
-        <span class="pilar-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
-        <strong>Qualidade em cada processo</strong>
-        <span>Cada fornada preparada com calma e cuidado.</span>
-      </li>
-      <li>
-        <span class="pilar-icon"><i class="fa-solid fa-wheat-awn"></i></span>
-        <strong>Ingredientes selecionados</strong>
-        <span>Qualidade que dá para sentir na primeira mordida.</span>
-      </li>
-    </ul>
-
-    <div class="sobre-stats">
-      <div><strong>10+</strong><span>sabores</span></div>
-      <div><strong>100%</strong><span>artesanal</span></div>
-      <div><strong>2022</strong><span>fundação</span></div>
-    </div>
-  </div>
-
-</section>
-
-<!-- QUAL BISCOITO COMBINA COM O SEU MOMENTO -->
-<section class="combina" id="seu-momento">
-  <div class="combina__wrap">
-
-    <div class="combina__left">
-      <p class="combina__eyebrow">Descubra o seu</p>
-      <h2 class="combina__title">Qual biscoito combina com o seu <em>momento?</em></h2>
-      <p class="combina__text">Escolha um momento e descubra a caixinha perfeita pra ele.</p>
-
-      <div class="combina__buttons">
-        <button type="button" class="momento-btn" data-momento="cafe" aria-pressed="false">
-          <i class="fa-solid fa-mug-hot"></i><span>Café da manhã</span>
-        </button>
-        <button type="button" class="momento-btn" data-momento="tarde" aria-pressed="false">
-          <i class="fa-solid fa-mug-saucer"></i><span>Tardinha com café</span>
-        </button>
-        <button type="button" class="momento-btn is-active" data-momento="happy" aria-pressed="true">
-          <i class="fa-solid fa-martini-glass-citrus"></i><span>Happy hour</span>
-        </button>
-        <button type="button" class="momento-btn" data-momento="presente" aria-pressed="false">
-          <i class="fa-solid fa-gift"></i><span>Presente</span>
-        </button>
-        <button type="button" class="momento-btn" data-momento="criancas" aria-pressed="false">
-          <i class="fa-solid fa-face-smile"></i><span>Lanche das crianças</span>
-        </button>
-        <button type="button" class="momento-btn" data-momento="estrada" aria-pressed="false">
-          <i class="fa-solid fa-car-side"></i><span>Na estrada</span>
-        </button>
-      </div>
-
-      <a class="combina__cta" id="momentosCta" href="https://wa.me/5551980302546" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i> Pedir meu favorito <i class="fa-solid fa-arrow-right"></i>
-      </a>
-
-      <button type="button" class="combina__surprise" id="momentosSurpresa">
-        <i class="fa-solid fa-dice"></i><span>Me surpreenda</span>
-      </button>
-    </div>
-
-    <div class="combina__panel" aria-live="polite">
-      <p class="combina__for">Para o seu</p>
-      <h3 class="combina__name" id="momentoNome">Happy hour</h3>
-      <div class="combina__stage" id="momentoStage"></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTATO -->
-<section class="contato" id="contato">
-  <div class="wrap">
-    <div class="contato-info reveal">
-      <p class="eyebrow">Fale com a gente</p>
-      <h2 style="margin-bottom: 30px;">Vamos conversar sobre biscoitos</h2>
-      <a class="canal" href="https://wa.me/5551980302546?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20biscoitos%20Krug." target="_blank" rel="noopener">
-  <div class="canal-icon"><i class="fa-brands fa-whatsapp"></i></div>
-  <div><strong>WhatsApp</strong><span>(51) 98030-2546</span></div>
-</a>
-      <a class="canal" href="mailto:contato@krugbiscoitos.com.br">
-  <div class="canal-icon"><i class="fa-solid fa-envelope"></i></div>
-  <div><strong>E-mail</strong><span>contato@krugbiscoitos.com.br</span></div>
-</a>
-<a class="canal" href="https://www.instagram.com/krugbiscoitos/" target="_blank" rel="noopener">
-  <div class="canal-icon"><i class="fa-brands fa-instagram"></i></div>
-  <div><strong>Instagram</strong><span>@krugbiscoitos</span></div>
-</a>
-    </div>
-    <form class="contato-form" onsubmit="return false;">
-      <div class="form-group">
-        <input id="nome" type="text" placeholder=" ">
-        <label for="nome">Nome</label>
-      </div>
-      <div class="form-group">
-        <input id="email" type="email" placeholder=" ">
-        <label for="email">E-mail</label>
-      </div>
-      <div class="form-group">
-        <textarea id="msg" placeholder=" "></textarea>
-        <label for="msg">Mensagem</label>
-      </div>
-      <button type="submit" class="btn btn-primary">
-        Enviar mensagem <i class="fa-solid fa-paper-plane"></i>
-      </button>
-    </form>
-  </div>
-</section>
-<footer>
-  <!-- Faixa de chamada -->
-
-  <div class="wrap footer-top">
-    <div class="footer-brand">
-      <img src="imagens/logos/krug.png" alt="Krug Biscoitos">
-      <p>Biscoitos caseiros com sabores que atravessam gerações, desde 2022 em Igrejinha, RS.</p>
-      <div class="footer-social">
-        <!-- use os mesmos links do cabeçalho -->
-        <a href="https://wa.me/5551980302546" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/krugbiscoitos/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      </div>
-    </div>
-
-    <div class="footer-col footer-nav">
-      <h4>Navegação</h4>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sabores.html">Sabores</a></li>
-        <li><a href="index.html#sobre">Sobre</a></li>
-        <li><a href="index.html#seu-momento">Momentos</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Contato</h4>
-      <ul>
-        <li><a href="https://wa.me/5551980302546?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20biscoitos%20Krug." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>(51) 98030-2546</a></li>
-        <li><a href="mailto:contato@krugbiscoitos.com.br"><i class="fa-solid fa-envelope"></i>contato@krugbiscoitos.com.br</a></li>
-        <li><a href="https://www.instagram.com/krugbiscoitos/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i>@krugbiscoitos</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Última linha com fundo próprio -->
-  <div class="footer-bar">
-    <div class="wrap footer-bottom">
-      <span>&copy; 2026 Krug Biscoitos. Todos os direitos reservados.</span>
-      <span>Site feito por <a href="https://lrwebdesign.com.br" target="_blank" rel="noopener">LR Web Design</a></span>
-    </div>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -123,7 +123,7 @@ if (contactForm) {
       const href = a.getAttribute('href') || '';
       const ativo = atual
         ? href.endsWith('#' + atual.id)
-        : href === page || (page === '' && href === 'index.html');
+        : href === page || (page === 'index.html' && href === '/');
       a.classList.toggle('is-active', ativo);
     });
   }
@@ -149,16 +149,16 @@ if (contactForm) {
   const botoes = document.querySelectorAll('.momento-btn');
 
    const BISCOITOS = {
-    ervas:       { nome: 'Palito de Ervas',       img: 'imagens/caixas/palito_ervas.png',        halo: '#8CCB3F' },
-    parmesao:    { nome: 'Palito de Parmesão',    img: 'imagens/caixas/palito_parmesao.png',     halo: '#F2B61F' },
-    bacon:       { nome: 'Palito de Bacon',       img: 'imagens/caixas/bacon.png',               halo: '#D9262B' },
-    coco:        { nome: 'Biscoito de Coco',      img: 'imagens/caixas/coco.png',                halo: '#EADFC9' },
-    chocolate:   { nome: 'Biscoito de Chocolate', img: 'imagens/caixas/chocolate.png',           halo: '#8A4B32' },
-    mel:         { nome: 'Coração de Mel',        img: 'imagens/caixas/mel.png',                 halo: '#E07B1A' },
-    milho:       { nome: 'Biscoito de Milho',     img: 'imagens/caixas/milho.png',               halo: '#F0B429' },
-    amanteigado: { nome: 'Coração Amanteigado',   img: 'imagens/caixas/coracao_amanteigado.png', halo: '#F1D9A8' },
-    doisAmores:  { nome: 'Dois Amores',           img: 'imagens/caixas/dois_amores.png',         halo: '#6E3B2A' }
-  };
+  ervas:       { nome: 'Palito de Ervas',       img: 'imagens/caixas/palito_ervas.webp',        halo: '#8CCB3F' },
+  parmesao:    { nome: 'Palito de Parmesão',    img: 'imagens/caixas/palito_parmesao.webp',     halo: '#F2B61F' },
+  bacon:       { nome: 'Palito de Bacon',       img: 'imagens/caixas/bacon.webp',               halo: '#D9262B' },
+  coco:        { nome: 'Biscoito de Coco',      img: 'imagens/caixas/coco.webp',                halo: '#EADFC9' },
+  chocolate:   { nome: 'Biscoito de Chocolate', img: 'imagens/caixas/chocolate.webp',           halo: '#8A4B32' },
+  mel:         { nome: 'Coração de Mel',        img: 'imagens/caixas/mel.webp',                 halo: '#E07B1A' },
+  milho:       { nome: 'Biscoito de Milho',     img: 'imagens/caixas/milho.webp',               halo: '#F0B429' },
+  amanteigado: { nome: 'Coração Amanteigado',   img: 'imagens/caixas/coracao_amanteigado.webp', halo: '#F1D9A8' },
+  doisAmores:  { nome: 'Dois Amores',           img: 'imagens/caixas/dois_amores.webp',         halo: '#6E3B2A' }
+};
 
   // [id do biscoito, frase]. Com 3 itens, o do meio fica maior (e define a cor do halo)
   const MOMENTOS = {
