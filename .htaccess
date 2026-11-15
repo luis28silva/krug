@@ -1,12 +1,9 @@
 RewriteEngine On
 
-# tira o www e força https de uma vez
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-
-# força https
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# força https e www de uma vez
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.krugbiscoitos.com.br%{REQUEST_URI} [L,R=301]
 
 # /index.html vira só /
 RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
