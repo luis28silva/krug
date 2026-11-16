@@ -2501,3 +2501,16 @@ footer {
     font-size: 0.95rem;
   }
 }
+
+/* Botão do hero: texto curto no celular, pra não quebrar em duas linhas */
+.btn-hero .txt-curto {
+  display: none;
+}
+@media (max-width: 700px) {
+  .btn-hero .txt-longo {
+    display: none;
+  }
+  .btn-hero .txt-curto {
+    display: inline;
+  }
+}
