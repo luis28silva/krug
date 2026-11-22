@@ -33,6 +33,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <script src="/js/rastreio.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -65,7 +66,11 @@
             rel="noopener"
             ><i class="fa-brands fa-instagram"></i
           ></a>
-          <a href="SEU_LINK_FACEBOOK" aria-label="Facebook" target="_blank">
+          <a
+            href="https://www.facebook.com/1401909642997901"
+            aria-label="Facebook"
+            target="_blank"
+          >
             <i class="fa-brands fa-facebook-f"></i>
           </a>
         </div>
@@ -98,9 +103,9 @@
           quem acredita que cada mordida merece ser especial.
         </p>
         <a href="sabores.html" class="btn btn-primary btn-hero">
-        <span class="txt-longo">Escolha seu novo sabor favorito aqui!</span>
-        <span class="txt-curto">Escolha seu sabor favorito</span>
-      </a>
+          <span class="txt-longo">Escolha seu novo sabor favorito aqui!</span>
+          <span class="txt-curto">Escolha seu sabor favorito</span>
+        </a>
       </div>
     </section>
 
@@ -467,10 +472,10 @@
             <div class="canal-icon"><i class="fa-brands fa-whatsapp"></i></div>
             <div><strong>WhatsApp</strong><span>(51) 98030-2546</span></div>
           </a>
-          <a class="canal" href="mailto:contato@krugbiscoitos.com.br">
+          <a class="canal" href="mailto:biscoitoskrug@gmail.com">
             <div class="canal-icon"><i class="fa-solid fa-envelope"></i></div>
             <div>
-              <strong>E-mail</strong><span>contato@krugbiscoitos.com.br</span>
+              <strong>E-mail</strong><span>biscoitoskrug@gmail.com</span>
             </div>
           </a>
           <a
@@ -483,17 +488,50 @@
             <div><strong>Instagram</strong><span>@krugbiscoitos</span></div>
           </a>
         </div>
-        <form class="contato-form" onsubmit="return false;">
+        <form
+          class="contato-form"
+          action="https://formsubmit.co/biscoitoskrug@gmail.com"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_next"
+            value="https://www.krugbiscoitos.com.br/obrigado.html"
+          />
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nova mensagem pelo site da Krug Biscoitos"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="text"
+            name="_honey"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+          />
           <div class="form-group">
-            <input id="nome" type="text" placeholder=" " />
+            <input id="nome" name="nome" type="text" placeholder=" " required />
             <label for="nome">Nome</label>
           </div>
           <div class="form-group">
-            <input id="email" type="email" placeholder=" " />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder=" "
+              required
+            />
             <label for="email">E-mail</label>
           </div>
           <div class="form-group">
-            <textarea id="msg" placeholder=" "></textarea>
+            <textarea
+              id="msg"
+              name="mensagem"
+              placeholder=" "
+              required
+            ></textarea>
             <label for="msg">Mensagem</label>
           </div>
           <button type="submit" class="btn btn-primary">
@@ -528,7 +566,11 @@
               aria-label="Instagram"
               ><i class="fa-brands fa-instagram"></i
             ></a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Facebook"
+            <a
+              href="https://www.facebook.com/1401909642997901"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
               ><i class="fa-brands fa-facebook-f"></i
             ></a>
           </div>
@@ -556,9 +598,8 @@
               >
             </li>
             <li>
-              <a href="mailto:contato@krugbiscoitos.com.br"
-                ><i class="fa-solid fa-envelope"></i
-                >contato@krugbiscoitos.com.br</a
+              <a href="mailto:biscoitoskrug@gmail.com"
+                ><i class="fa-solid fa-envelope"></i>biscoitoskrug@gmail.com</a
               >
             </li>
             <li>
